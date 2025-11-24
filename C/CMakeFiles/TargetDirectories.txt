@@ -1,7 +1,0 @@
-/Users/ivan/Desktop/Ensimag/2A/ensimag-video/C/CMakeFiles/ensivideo.dir
-/Users/ivan/Desktop/Ensimag/2A/ensimag-video/C/CMakeFiles/check.dir
-/Users/ivan/Desktop/Ensimag/2A/ensimag-video/C/CMakeFiles/package.dir
-/Users/ivan/Desktop/Ensimag/2A/ensimag-video/C/CMakeFiles/package_source.dir
-/Users/ivan/Desktop/Ensimag/2A/ensimag-video/C/CMakeFiles/test.dir
-/Users/ivan/Desktop/Ensimag/2A/ensimag-video/C/CMakeFiles/edit_cache.dir
-/Users/ivan/Desktop/Ensimag/2A/ensimag-video/C/CMakeFiles/rebuild_cache.dir

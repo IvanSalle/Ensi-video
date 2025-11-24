@@ -40,7 +40,7 @@ set(CMAKE_C_STANDARD 23)
 # CFLAGS for debug and all flags from the libraries sdl/ogg/vorbis from pkg-config
 set(CMAKE_BUILD_TYPE Debug)
 
-set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} ${ALLSTRIP_PKG_CFLAGS} -Wall -Wextra -Xanalyzer")
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} ${ALLSTRIP_PKG_CFLAGS} -Wall -Wextra -fanalyzer")
 
 
 ##
