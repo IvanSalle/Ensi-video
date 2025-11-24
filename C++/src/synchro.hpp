@@ -5,6 +5,7 @@
 
 #include <condition_variable>
 #include <mutex>
+#include <thread>
 using namespace std;
 
 /* Les extern des variables pour la synchro ici */
@@ -14,9 +15,14 @@ extern mutex mutextex;
 extern condition_variable texprod;
 extern condition_variable texconso;
 
-extern bool fini;
+extern bool taille_fini;
 extern int tex_nbready;
-extern bool windowsdone;
+
+extern bool windowsdone; 
+
+extern mutex mutexhashmap;
+
+extern unique_ptr<thread> thread_affichage;
 
 /* Fonctions de synchro à implanter */
 

@@ -19,6 +19,7 @@ static SDL_Renderer *renderer = NULL;
 struct TextureDate texturedate[NBTEX] = {};
 SDL_Rect rect = {};
 
+
 map<int, struct streamstate *> maptheorastrstate;
 
 void draw2SDL(int serial) {
@@ -56,11 +57,11 @@ void draw2SDL(int serial) {
 
   // ADD Your code HERE
   /* Protéger l'accès à la hashmap */
-
+  mutexhashmap.lock();
   auto search = maptheorastrstate.find(serial);
   assert(search != maptheorastrstate.end());
   s = search->second;
-
+  mutexhashmap.unlock();
   // END of your moficiation HERE
   assert(s->strtype == streamtype::TYPE_THEORA);
 

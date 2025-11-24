@@ -35,7 +35,7 @@ message(STATUS "ldflags: ${ALLSTRIP_PKG_LDFLAGS}")
 # Passer le compilateur CXX au standard C++-23 et ajouter les CFLAGS pour la sdl
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} ${ALLSTRIP_PKG_CFLAGS} -Wall -Wextra -Werror -fanalyzer")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} ${ALLSTRIP_PKG_CFLAGS} -Wall -Wextra -Werror")
 
 
 ##

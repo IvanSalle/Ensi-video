@@ -5,11 +5,12 @@
 #include <cassert>
 #include <chrono>
 #include <fstream>
+#include <iostream>
+
 
 using namespace std;
 
 bool fini = false;
-
 
 chrono::time_point<chrono::high_resolution_clock> datedebut;
 
@@ -71,7 +72,7 @@ struct streamstate *getStreamState(ogg_sync_state *pstate, ogg_page *ppage,
 
     // Add your code HERE
     // proteger l'accès à chaque hashmap
-
+    
     if (type == streamtype::TYPE_THEORA) {
       maptheorastrstate[serial] = s;
     } else {
@@ -80,7 +81,7 @@ struct streamstate *getStreamState(ogg_sync_state *pstate, ogg_page *ppage,
 
   } else {
     // proteger l'accès à chaque hashmap
-
+    mutexhashmap.lock();
     if (type == streamtype::TYPE_THEORA) {
       auto search = maptheorastrstate.find(serial);
       assert(search != maptheorastrstate.end());
@@ -90,7 +91,7 @@ struct streamstate *getStreamState(ogg_sync_state *pstate, ogg_page *ppage,
       assert(search != mapvorbisstrstate.end());
       s = search->second;
     }
-
+    mutexhashmap.unlock();
     // END of your modification of code HERE
     assert(s != NULL);
   }
@@ -150,6 +151,8 @@ int decodeAllHeaders(int respac, struct streamstate *s, enum streamtype type) {
 	// BEGIN your modification HERE
         // lancement du thread gérant l'affichage (draw2SDL)
         // inserer votre code ici !!
+        cout << "Thread affichage créé" << endl;
+        thread_affichage = make_unique<thread>(draw2SDL,s->serial);
         // END of your modification
       }
     }

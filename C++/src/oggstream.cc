@@ -7,6 +7,7 @@
 #include <ogg/ogg.h>
 #include <stdio.h>
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -17,6 +18,7 @@ ogg_page theorapage,
 
 void theoraStreamReader(const string filename) {
   // char *filename = (char *) arg;
+cout << "Thread theora créé" << endl;
 
   ifstream vf(filename);
   // FILE *vf = fopen(filename, "r");
@@ -74,6 +76,7 @@ void theoraStreamReader(const string filename) {
 
 void vorbisStreamReader(const string filename) {
   // char *filename = (char *) arg;
+  cout << "Thread vorbis créé" << endl;
   ifstream vf(filename);
   // FILE *vf = fopen(filename, "r");
   assert(vf);
